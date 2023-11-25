@@ -1,0 +1,167 @@
+lab 4
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
+import java.nio.ByteBuffer;
+
+public class ExpressionCalculatorGUI {
+    private JFrame frame;
+    private JTextField xField;
+    private JTextField fileNameField;
+    private JCheckBox piCheckBox;
+
+    public ExpressionCalculatorGUI() {
+        frame = new JFrame("Calculator");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Create a panel with GridBagLayout for more precise component placement
+        JPanel mainPanel = new JPanel(new GridBagLayout());
+        frame.add(mainPanel);
+
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.insets = new Insets(5, 5, 5, 5); // Adjust spacing
+
+        JLabel xLabel = new JLabel("Enter x:");
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        mainPanel.add(xLabel, constraints);
+
+        xField = new JTextField(10);
+        constraints.gridx = 1;
+        constraints.gridy = 0;
+        mainPanel.add(xField, constraints);
+
+        JLabel fileNameLabel = new JLabel("File name:");
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        mainPanel.add(fileNameLabel, constraints);
+
+        fileNameField = new JTextField(10);
+        constraints.gridx = 1;
+        constraints.gridy = 1;
+        mainPanel.add(fileNameField, constraints);
+
+        piCheckBox = new JCheckBox("π");
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        constraints.gridwidth = 2; // Span two columns
+        mainPanel.add(piCheckBox, constraints);
+
+        JPanel buttonPanel = new JPanel(new FlowLayout());
+
+        JButton calculateButton = new JButton("Calculate");
+        calculateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calculateExpression();
+            }
+        });
+        buttonPanel.add(calculateButton);
+
+        JButton openTextButton = new JButton("Open Text");
+        openTextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openTextFile(fileNameField.getText() + ".txt");
+            }
+        });
+        buttonPanel.add(openTextButton);
+
+        JButton readTextButton = new JButton("Read Text");
+        readTextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                readTextFile(fileNameField.getText() + ".txt");
+            }
+        });
+        buttonPanel.add(readTextButton);
+
+        JButton readBinaryButton = new JButton("Read Binary");
+        readBinaryButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                readBinaryFile(fileNameField.getText() + ".dat");
+            }
+        });
+        buttonPanel.add(readBinaryButton);
+
+        constraints.gridx = 0;
+        constraints.gridy = 3;
+        constraints.gridwidth = 2; // Span two columns
+        mainPanel.add(buttonPanel, constraints);
+
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    private void calculateExpression() {
+        String xText = xField.getText();
+        String fileName = fileNameField.getText();
+        boolean usePi = piCheckBox.isSelected();
+
+        try {
+            // Implement your calculation logic here
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(frame, "Invalid input format", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (ArithmeticException e) {
+            JOptionPane.showMessageDialog(frame, "Division by zero: cos(4x) equals zero.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void openTextFile(String fileName) {
+        try {
+            File file = new File(fileName);
+            if (file.exists()) {
+                Desktop.getDesktop().open(file);
+            } else {
+                JOptionPane.showMessageDialog(frame, "File does not exist", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(frame, "Error opening file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void readTextFile(String fileName) {
+        try {
+            File file = new File(fileName);
+            if (file.exists()) {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String line = reader.readLine();
+                reader.close();
+                // Implement further processing of the read line
+            } else {
+                JOptionPane.showMessageDialog(frame, "File does not exist", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(frame, "Error reading text file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void readBinaryFile(String fileName) {
+        try {
+            File file = new File(fileName);
+            if (file.exists()) {
+                DataInputStream dataInput = new DataInputStream(new FileInputStream(file));
+                double x = dataInput.readDouble();
+                double result = dataInput.readDouble();
+                dataInput.close();
+                // Implement further processing of x and result
+            } else {
+                JOptionPane.showMessageDialog(frame, "File does not exist", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(frame, "Error reading binary file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new ExpressionCalculatorGUI();
+            }
+        });
+    }
+}
