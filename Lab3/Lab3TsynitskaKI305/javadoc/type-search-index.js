@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"Lab3.Tsynitska.KI305","l":"BoatActions"},{"p":"Lab3.Tsynitska.KI305","l":"BoatEnter"},{"p":"Lab3.Tsynitska.KI305","l":"BoatMovement"},{"p":"Lab3.Tsynitska.KI305","l":"BoatRepair"},{"p":"Lab3.Tsynitska.KI305","l":"Driver"},{"p":"Lab3.Tsynitska.KI305","l":"MotorBoat"}];updateSearchResults();

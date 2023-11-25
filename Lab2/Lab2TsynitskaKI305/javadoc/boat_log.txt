@@ -1,0 +1,67 @@
+Rowing the boat.
+Raising the sail.
+Lowering the sail.
+Stopped rowing.
+Added a rower. Total rowers: 5
+Removed a rower. Total rowers: 4
+Rowing the boat.
+Raising the sail.
+Lowering the sail.
+Stopped rowing.
+Added a rower. Total rowers: 5
+Removed a rower. Total rowers: 4
+Rowing the boat.
+Rowing the boat.
+Raising the sail.
+Lowering the sail.
+Stopped rowing.
+Added a rower. Total rowers: 5
+Removed a rower. Total rowers: 4
+Rowing the boat.
+Rowing the boat.
+Raising the sail.
+Lowering the sail.
+Stopped rowing.
+Added a rower. Total rowers: 5
+Removed a rower. Total rowers: 4
+Rowing the boat.
+Rowing the boat.
+Raising the sail.
+Lowering the sail.
+Stopped rowing.
+Added a rower. Total rowers: 5
+Removed a rower. Total rowers: 4
+Rowing the boat.
+Rowing the boat.
+Raising the sail.
+Lowering the sail.
+Stopped rowing.
+Added a rower. Total rowers: 5
+Removed a rower. Total rowers: 4
+Rowing the boat.
+Rowing the boat.
+Raising the sail.
+Lowering the sail.
+Stopped rowing.
+Added a rower. Total rowers: 5
+Removed a rower. Total rowers: 4
+Rowing the boat.
+Rowing the boat.
+Raising the sail.
+Lowering the sail.
+Stopped rowing.
+Added a rower. Total rowers: 7
+Removed a rower. Total rowers: 6
+Rowing the boat.
+Rowing the boat.
+Raising the sail.
+Lowering the sail.
+Stopped rowing.
+Added a rower. Total rowers: 7
+Removed a rower. Total rowers: 6
+Rowing the boat.
+Rowing the boat.
+No sail available.
+Added a rower. Total rowers: 5
+Lowering the sail.
+Stopped rowing.

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"KI305.Tsynitska.Lab2","l":"RowingBoat"},{"p":"KI305.Tsynitska.Lab2","l":"RowingBoatDriver"}];updateSearchResults();
